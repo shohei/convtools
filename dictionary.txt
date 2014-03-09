@@ -105,7 +105,7 @@
 'make .stl'	'.stlを生成'
 'make .uni'	'.uniを生成'
 'max intensity z (mm)'	'最大 z 強さ (mm)'
-'max spot size (mm):'	'最大スポットサイズ (mm')
+'max spot size (mm):'	'最大スポットサイズ (mm)'
 'max z power (%)'	'最大 z パワー (%)'
 'min intensity z (mm)'	'最小 z 強さ (mm)'
 'min z power (%)'	'最小 z パワー (%)'
