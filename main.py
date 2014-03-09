@@ -38,5 +38,5 @@ for line in fin:
     os.system(command)
 
 
-#os.system("rm escaped")
+os.system("rm escaped")
 
