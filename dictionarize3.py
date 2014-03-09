@@ -9,9 +9,8 @@ string1 = commands.getoutput("find ../src -type f -print | xargs grep 'label='")
 fout.write(string1)
 string2 = commands.getoutput("find ../src -type f -print | xargs grep 'SetLabel'")
 fout.write(string2)
-#string3 = commands.getoutput("find ../src -type f -print | xargs grep 'SetLabel'")
-#fout.write(string3)
-
+string3 = commands.getoutput("find ../src -type f -print | xargs grep 'SetLabel'")
+fout.write(string3)
 fout.close()
 
 fin = open("before1").readlines()
