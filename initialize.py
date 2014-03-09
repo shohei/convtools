@@ -12,7 +12,7 @@ for file in glob.glob('../src/guis/*'):
     try:
         file.split('/')[-1].split('.')[1]
     except:
-        change_quote(file)
+        #change_quote(file)
         fin = open(file,"r").readlines()
         fout = open(file,"w")
         i = 0
@@ -24,7 +24,7 @@ for file in glob.glob('../src/guis/*'):
             i += 1
 
 for file in glob.glob('../src/py/*.py'):
-    change_quote(file)
+    #change_quote(file)
     fin = open(file,"r").readlines()
     fout = open(file,"w")
     i = 0
@@ -39,7 +39,7 @@ for file in glob.glob('../src/scripts/*'):
     try:
         file.split('/')[-1].split('.')[1]
     except:
-        change_quote(file)
+        #change_quote(file)
         fin = open(file,"r").readlines()
         fout = open(file,"w")
         i = 0
