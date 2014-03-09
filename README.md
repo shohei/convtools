@@ -10,8 +10,6 @@ Pythonの実行環境が必要です。
 Python2.7.5, Mac OSX Mavericksで動作を確認しています。
 またGNU-sedの導入が必要です。Homebrewなどでインストールしておいて下さい。
 
-
-
 ## 使い方
 ターミナルを開いてfab modulesのソースコードがある場所に移動します。
 ```
@@ -20,7 +18,7 @@ $ cd (fab_srcのある場所)
 Gitがインストールされている場合は、本スクリプトを次のコマンドでcloneします。
 
 ```
-git clone git@github.com:shohei/convtools.git
+$ git clone git@github.com:shohei/convtools.git
 ```
 あるいは手動でダウンロードしてfab_srcフォルダの直下に置いて下さい。
 
