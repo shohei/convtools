@@ -13,6 +13,8 @@ for line in fin:
     #line = line.replace(".","\.")
     #line = line.replace(":","\:")
     #line = line.replace("/","\/")
+    line = line.replace("[","\[")
+    line = line.replace("]","\]")
     fout.write(line)
 
 fout.close()
