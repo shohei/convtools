@@ -24,28 +24,29 @@ def insert(part):
     squote = False
     dquote = False 
     extracted = part 
-    print extracted
+    if extracted == "' ' ":
+        return 
+    if extracted == "''":
+        return
+    if extracted == '" "':
+        return 
+    if extracted == '""':
+        return
     if "'" in part:
         squote = True
-        print "squote",
-    elif "'" in part:
+    elif '"' in part:
         dquote = True
-        print "dquote",
     else:
-        print "no quote",
-    if extracted == " ":
         return 
-    if extracted == "":
-        return
-    if not squote and dquote:
-        fout.write("'")
+    #if not squote and dquote:
+    #    fout.write("'")
     fout.write(extracted)
-    if not squote and extracted[-1] == "'":
+    if squote and extracted[-1] != "'":
         fout.write("'")
-    elif not dquote and extracted[-1] == '"':
+    elif dquote and extracted[-1] != '"':
         fout.write('"')
-    else:
-        fout.write("'")
+    #else:
+    #    fout.write("'")
     fout.write("\t")
     if squote:
         fout.write("''")

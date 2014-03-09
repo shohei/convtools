@@ -22,7 +22,16 @@ for line in fin:
     split = line.split("\t")
     before = split[0].strip()
     after = split[1].strip()
-    command = 'find ../src -type f -print | xargs gsed -i "s/'+before+'/'+after+'/g"'
+    squote = False
+    dquote = False
+    if "'" in before:
+        squote = True
+    elif '"' in before:
+        dquote = True
+    if squote:
+       command = 'find ../src -type f -print | xargs gsed -i "s/'+before+'/'+after+'/g"'
+    elif dquote:
+       command = "find ../src -type f -print | xargs gsed -i 's/"+before+"/"+after+"/g'"
     print command
     os.system(command)
 
