@@ -4,6 +4,7 @@
 ## 概要
 Fab Modulesを日本語に翻訳するためのスクリプトです。
 
+
 ## 実行環境
 Pythonの実行環境が必要です。
 Python2.7.5, Mac OSX Mavericksで動作を確認しています。
@@ -29,9 +30,16 @@ fab_src --- commands.html
 ## 使い方
 ターミナルから以下のコマンドを実行して下さい。
 ```
-$ python setup.py
+@fab_src/convtools: $ python setup.py
+```
+変換が終わったら上の階層に上がって、通常のようにビルドして下さい。
+
+```
+@fab_src/convtools: $ cd ../
+@fab_src: $ make fab
 ```
 
+Have fun!
 
 ### 補足：辞書の作成
 **以下の項目は書きかけです。**
