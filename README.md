@@ -18,7 +18,7 @@ fab_src --- commands.html
 		 |- src
 		 |- convtools (本フォルダ) 
 				|- README.md
-　　　　        		|- initialize.py
+				|- initialize.py
 				|- main.py
 				|- dictionary.txt
 				|- dictionarize.py
