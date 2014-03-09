@@ -7,6 +7,7 @@ Fab Modulesを日本語に翻訳するためのスクリプトです。
 ## 実行環境
 Pythonの実行環境が必要です。
 Python2.7.5, Mac OSX Mavericksで動作を確認しています。
+またGNU-sedの導入が必要です。Homebrewなどでインストールしておいて下さい。
 
 ダウンロードしたフォルダをfab_srcフォルダの直下に置いて下さい。
 
@@ -18,27 +19,22 @@ fab_src --- commands.html
 		 |- src
 		 |- convtools (本フォルダ) 
 				|- README.md
+				|- setup.py
 				|- initialize.py
-				|- main.py
+				|- replace.py
 				|- dictionary.txt
-				|- dictionarize.py
+				|- tools
 ```
 
 ## 使い方
-- 1. 文字エンコーディングの設定を追加する
-
+ターミナルから以下のコマンドを実行して下さい。
 ```
-$ python initialize.py
-```
-
-- 2. 辞書ファイルにしたがって置き換える
-
-```
-$ python main.py
+$ python setup.py
 ```
 
 
 ### 補足：辞書の作成
+**以下の項目は書きかけです。**
 
 辞書ファイルdictionary.txtを生成するスクリプトが同梱されていますので、自分の好きなようにカスタマイズすることが可能です。Fab Modulesのアップデートがあったときなどに活用して下さい。
 
@@ -75,7 +71,7 @@ dictionary_temp.txt
 ```
 作成できたらdictionary.txtにリネームして保存して下さい。
 
-後は上の操作2.を実行して下さい。
+後は上の操作を実行して下さい。
 
 
 
