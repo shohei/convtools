@@ -17,9 +17,18 @@ fout.close()
 fin = open("before1").readlines()
 fout = open("before2","w")
 
-def split(part,string):
+def get_word(part,string):
     if string == "label=":
-        return part.split(string)[1].strip().split(')')[0].strip() 
+        extracted1 = part.split(string)[1].strip()
+        if "'" in extracted1:
+            extracted2 = extracted1.split("'")[1]#.strip() 
+            extracted2 = "'"+extracted2+"'"
+        elif '"' in extracted1:
+            extracted2 = extracted1.split('"')[1]#.strip() 
+            extracted2 = '"'+extracted2+'"'
+        print extracted2
+        return extracted2 
+        
     elif string == "SetLabel":
         return part.split('SetLabel')[1].strip().split('(')[1].split(')')[0].strip()
 
@@ -60,12 +69,13 @@ def insert(part):
     fout.write("\n")
 
 for line in fin:
-    before = line.split('\t')[0].strip()
+    before = line.split(':')[1].strip()
+    #before = line
     if 'label=' in before:
-        before = split(before,"label=")
+        before = get_word(before,"label=")
         insert(before)
     elif 'SetLabel' in before:
-        before = split(before,"SetLabel")
+        before = get_word(before,"SetLabel")
         insert(before)
 fout.close()
 

@@ -9,9 +9,9 @@ fout = open("escaped","w")
 for line in fin:
     line = line.replace(" ","\s")
     #line = line.replace("(","\(")
-    line = line.replace("%","\%")
+    #line = line.replace("%","\%")
     line = line.replace(".","\.")
-    line = line.replace(":","\:")
+    #line = line.replace(":","\:")
     line = line.replace("/","\/")
     fout.write(line)
 
