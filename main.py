@@ -7,12 +7,12 @@ fin = open("dictionary.txt").readlines()
 fout = open("escaped","w")
 
 for line in fin:
-    line = line.replace(" ","\s")
+    #line = line.replace(" ","\s")
     #line = line.replace("(","\(")
     #line = line.replace("%","\%")
-    line = line.replace(".","\.")
+    #line = line.replace(".","\.")
     #line = line.replace(":","\:")
-    line = line.replace("/","\/")
+    #line = line.replace("/","\/")
     fout.write(line)
 
 fout.close()
@@ -29,12 +29,14 @@ for line in fin:
     elif '"' in before:
         dquote = True
     if squote:
-       command = 'find ../src -type f -print | xargs gsed -i "s/'+before+'/'+after+'/g"'
+       #using gsed 
+       command = 'find ../src -type f -print | xargs gsed -i "s@'+before+'@'+after+'@g"'
     elif dquote:
-       command = "find ../src -type f -print | xargs gsed -i 's/"+before+"/"+after+"/g'"
+       # using gsed 
+       command = "find ../src -type f -print | xargs gsed -i 's@"+before+"@"+after+"@g'"
     print command
     os.system(command)
 
 
-os.system("rm escaped")
+#os.system("rm escaped")
 
