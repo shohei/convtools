@@ -9,8 +9,8 @@ string1 = commands.getoutput("find ../src -type f -print | xargs grep 'label='")
 fout.write(string1)
 string2 = commands.getoutput("find ../src -type f -print | xargs grep 'SetLabel'")
 fout.write(string2)
-string3 = commands.getoutput("find ../src -type f -print | xargs grep 'SetLabel'")
-fout.write(string3)
+#string3 = commands.getoutput("find ../src -type f -print | xargs grep 'SetLabel'")
+#fout.write(string3)
 
 fout.close()
 
@@ -19,18 +19,29 @@ fout = open("before2","w")
 
 def get_word(part,string):
     if string == "label=":
-        extracted1 = part.split(string)[1].strip()
+        extracted1 = part.split(string)[1]
         if "'" in extracted1:
             extracted2 = extracted1.split("'")[1]#.strip() 
             extracted2 = "'"+extracted2+"'"
         elif '"' in extracted1:
             extracted2 = extracted1.split('"')[1]#.strip() 
             extracted2 = '"'+extracted2+'"'
-        print extracted2
         return extracted2 
         
     elif string == "SetLabel":
-        return part.split('SetLabel')[1].strip().split('(')[1].split(')')[0].strip()
+        extracted1 = part.split('SetLabel')[1]
+        if "'" in extracted1:
+            extracted2 = extracted1.split("'")[1]
+            if not extracted2[-1] == "'":
+                extracted2 = "'" + extracted2 + "'"
+        elif '"' in extracted1:
+            extracted2 = extracted1.split('"')[1]
+            if not extracted2[-1] == '"':
+                extracted2 = '"' + extracted2 + '"'
+        else:
+            extracted2 = extracted1.split('(')[1].split(')')[0]
+        print extracted2
+        return extracted2 
 
 def insert(part):
     squote = False
@@ -69,7 +80,7 @@ def insert(part):
     fout.write("\n")
 
 for line in fin:
-    before = line.split(':')[1].strip()
+    before = line#.split(':')[1].strip()
     #before = line
     if 'label=' in before:
         before = get_word(before,"label=")
