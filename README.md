@@ -10,9 +10,21 @@ Pythonの実行環境が必要です。
 Python2.7.5, Mac OSX Mavericksで動作を確認しています。
 またGNU-sedの導入が必要です。Homebrewなどでインストールしておいて下さい。
 
-ダウンロードしたフォルダをfab_srcフォルダの直下に置いて下さい。
 
-(フォルダ構成）
+
+## 使い方
+ターミナルを開いてスクリプトの階層に移動します。
+```
+$ cd (fab_srcのある場所) 
+```
+Gitがインストールされている場合は、本スクリプトを次のコマンドでcloneします。
+
+```
+git clone git@github.com:shohei/convtools.git
+```
+あるいは手動でダウンロードしてfab_srcフォルダの直下に置いて下さい。
+
+フォルダ構成は以下のようになります。
 
 ```
 fab_src --- commands.html 
@@ -27,16 +39,14 @@ fab_src --- commands.html
 				|- tools
 ```
 
-## 使い方
-ターミナルから以下のコマンドを実行して下さい。
+準備ができたら以下のコマンドを実行して下さい。
 ```
-@fab_src/convtools: $ python setup.py
+$ python setup.py
 ```
-変換が終わったら上の階層に上がって、通常のようにビルドして下さい。
-
+日本語への変換が終わったら上の階層に上がって、通常のようにビルドして下さい。
 ```
-@fab_src/convtools: $ cd ../
-@fab_src: $ make fab
+$ cd ../
+$ make fab
 ```
 
 Have fun!
