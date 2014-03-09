@@ -9,9 +9,8 @@ string1 = commands.getoutput("find ../src -type f -print | xargs grep 'label='")
 fout.write(string1)
 string2 = commands.getoutput("find ../src -type f -print | xargs grep 'SetLabel'")
 fout.write(string2)
-#string3 = commands.getoutput("find ../src -type f -print | xargs grep 'SetLabel'")
-#fout.write(string3)
-
+string3 = commands.getoutput("find ../src -type f -print | xargs grep 'Append('")
+fout.write(string3)
 fout.close()
 
 fin = open("before1").readlines()
@@ -32,16 +31,21 @@ def get_word(part,string):
         extracted1 = part.split('SetLabel')[1]
         if "'" in extracted1:
             extracted2 = extracted1.split("'")[1]
+            print extracted2
             if not extracted2[-1] == "'":
                 extracted2 = "'" + extracted2 + "'"
         elif '"' in extracted1:
             extracted2 = extracted1.split('"')[1]
+            print extracted2
             if not extracted2[-1] == '"':
                 extracted2 = '"' + extracted2 + '"'
         else:
             extracted2 = extracted1.split('(')[1].split(')')[0]
-        print extracted2
         return extracted2 
+    elif string == "Append(":
+        extracted1 = part.split(':')[1].strip()
+        print extracted1
+        return extracted1
 
 def insert(part):
     squote = False
@@ -79,6 +83,12 @@ def insert(part):
         fout.write("''")
     fout.write("\n")
 
+def insertAppend(part):
+    fout.write(part)
+    fout.write("\t")
+    fout.write(part)
+    fout.write("\n")
+
 for line in fin:
     before = line#.split(':')[1].strip()
     #before = line
@@ -88,6 +98,9 @@ for line in fin:
     elif 'SetLabel' in before:
         before = get_word(before,"SetLabel")
         insert(before)
+    elif 'Append(' in before:
+        before = get_word(before,"Append(")
+        insertAppend(before)
 fout.close()
 
 array = []
@@ -106,3 +119,5 @@ fout.close()
 
 os.system("rm before1")
 os.system("rm before2")
+
+

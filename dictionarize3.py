@@ -96,7 +96,7 @@ for line in fin:
     array.append(line.strip())
 array = sorted(list(set(array)))
 
-fout = open("dictionary_temp.txt","w")
+fout = open("dictionary_temp3.txt","w")
 for a in array:
     fout.write(a)
     fout.write("\n")
@@ -106,3 +106,5 @@ fout.close()
 
 os.system("rm before1")
 os.system("rm before2")
+
+
