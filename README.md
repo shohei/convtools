@@ -8,7 +8,13 @@ Fab Modulesを日本語に翻訳するためのスクリプトです。
 ## 実行環境
 Pythonの実行環境が必要です。
 Python2.7.5, Mac OSX Mavericksで動作を確認しています。
+
 またGNU-sedの導入が必要です。Homebrewなどでインストールしておいて下さい。
+
+**GNU sedのインストール**
+```
+$ brew install gnu-sed
+```
 
 ## 使い方
 ターミナルを開いてfab modulesのソースコードがある場所に移動します。
