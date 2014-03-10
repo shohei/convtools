@@ -100,20 +100,59 @@ dictionary_temp.txt
 # For international users
 This code can be used even for your languages with a modification of a dictionary file.
 
-First, you need python environment. This code was verified with Python 2.7.5 and Mac OSX Mavericks.
+First, you need a Python environment. This code was verified with Python 2.7.5 and Mac OSX Mavericks.
 
 GNU-sed is also required. Install it by homebrew (Mac users) or other means.
 
-**Installing GNU sed with homebrew**
+**Installing GNU-sed with homebrew**
 ```
 $ brew install gnu-sed
 ```
 
+Download the source of fab modules, and expand it. Then move to the folder location.
+```
+$ cd /path/to/fab_src
+```
 
+Clone this program (or download it manually). 
+```
+$ git clone git@github.com:shohei/convtools.git
+```
 
+Move to the convtools directory, and you'll find a dictionary file named dictionary.txt. Open and modify it. 
 
+(Example for French)
 
+Before (Japanese translation)
+```
+"Exit"	"終了"
+"Finished."	"終了しました。"
+"Origin:"	"原点:"
+"Ready."	"準備完了。"...
+```
 
+After (French translation)
+```
+"Exit"	"Sortie"
+"Finished."	"Terminé."
+"Origin:"	"origine:"
+"Ready."	"Prêt."
+...
+```
 
+Save the modification. Run the following command.
 
+```
+$ python setup.py
+```
+Above command will convert the original English to your languages.
 
+After running the command, move to upper directory and build fab modules as usual.
+
+```
+$ cd ../
+$ make fab
+
+```
+
+Voilà, ça marche! I hope you enjoy it.
