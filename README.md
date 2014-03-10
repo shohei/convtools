@@ -1,6 +1,8 @@
 # convtools
 2014 March, Shohei Aoki
 
+Fot those who use this code with your languages, please see a bottom description.
+
 ## 概要
 Fab Modulesを日本語に翻訳するためのスクリプトです。
 
@@ -94,6 +96,24 @@ dictionary_temp.txt
 作成できたらdictionary.txtにリネームして保存して下さい。
 
 後は上の操作を実行して下さい。
+
+# For international users
+This code can be used even for your languages with a modification of a dictionary file.
+
+First, you need python environment. This code was verified with Python 2.7.5 and Mac OSX Mavericks.
+
+GNU-sed is also required. Install it by homebrew (Mac users) or other means.
+
+**Installing GNU sed with homebrew**
+```
+$ brew install gnu-sed
+```
+
+
+
+
+
+
 
 
 
