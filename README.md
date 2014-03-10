@@ -1,7 +1,9 @@
 # convtools
 2014 March, Shohei Aoki
 
-Fot those who use this code with your languages, please see a bottom description.
+This program converts fab modules (English) into your languages.
+
+See a detail describe at the bottom.
 
 ## 概要
 Fab Modulesを日本語に翻訳するためのスクリプトです。
@@ -97,8 +99,8 @@ dictionary_temp.txt
 
 後は上の操作を実行して下さい。
 
-# For international users
-This code can be used even for your languages with a modification of a dictionary file.
+# How to use
+This code was originally designed for Japanese translation, however, it can be used for your languages with a modification of a dictionary file.
 
 First, you need a Python environment. This code was verified with Python 2.7.5 and Mac OSX Mavericks.
 
