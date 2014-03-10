@@ -126,18 +126,18 @@ Move to the convtools directory, and you'll find a dictionary file named diction
 (Folder location)
 ```
 fab_src --- commands.html 
-	 |- Makefile
-	 |- src
-	 |- convtools (this program)
-		|- README.md
-		|- setup.py
-		|- initialize.py
-		|- replace.py
-		|- dictionary.txt
-		|- tools
+		 |- Makefile
+		 |- src
+		 |- convtools (this program)
+			|- README.md
+			|- setup.py
+			|- initialize.py
+			|- replace.py
+			|- dictionary.txt
+			|- tools
 ```
 
-Open dictionary.txt with a text editor. Now we modify it. I show you an example for French translation
+Open dictionary.txt with a text editor. Now we modify it. I show you an example for French translation.
 
 **Before (Japanese translation)**
 ```
