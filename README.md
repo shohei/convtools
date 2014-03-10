@@ -119,9 +119,23 @@ Clone this program (or download it manually).
 $ git clone git@github.com:shohei/convtools.git
 ```
 
-Move to the convtools directory, and you'll find a dictionary file named dictionary.txt. Open it with a text editor and modify it. 
+Move to the convtools directory, and you'll find a dictionary file named dictionary.txt. 
 
-I show you an example for French translation
+(Folder location)
+```
+fab_src --- commands.html 
+	 |- Makefile
+	 |- src
+	 |- convtools (this program)
+		|- README.md
+		|- setup.py
+		|- initialize.py
+		|- replace.py
+		|- dictionary.txt
+		|- tools
+```
+
+Open dictionary.txt with a text editor. Now we modify it. I show you an example for French translation
 
 **Before (Japanese translation)**
 ```
@@ -140,7 +154,7 @@ I show you an example for French translation
 ...
 ```
 
-Save the modification. Run a following command.
+After changing all words, save the file. Then run a following command.
 
 ```
 $ python setup.py
