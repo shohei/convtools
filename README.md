@@ -3,6 +3,8 @@
 
 This program converts fab modules (English) into your languages.
 
+Fab modules: http://kokompe.cba.mit.edu/
+
 See a detail describe at the bottom.
 
 ## 概要
