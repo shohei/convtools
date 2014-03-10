@@ -104,12 +104,12 @@ First, you need a Python environment. This code was verified with Python 2.7.5 a
 
 GNU-sed is also required. Install it by homebrew (Mac users) or other means.
 
-**Installing GNU-sed with homebrew**
-```
-$ brew install gnu-sed
-```
+>**Installing GNU-sed with homebrew**
+>```
+>$ brew install gnu-sed
+>```
 
-Download the source of fab modules, and expand it. Then move to the folder location.
+Download a fab modules source code and move to the folder location.
 ```
 $ cd /path/to/fab_src
 ```
@@ -119,11 +119,11 @@ Clone this program (or download it manually).
 $ git clone git@github.com:shohei/convtools.git
 ```
 
-Move to the convtools directory, and you'll find a dictionary file named dictionary.txt. Open and modify it. 
+Move to the convtools directory, and you'll find a dictionary file named dictionary.txt. Open it with a text editor and modify it. 
 
-(Example for French)
+I show you an example for French translation
 
-Before (Japanese translation)
+**Before (Japanese translation)**
 ```
 "Exit"	"終了"
 "Finished."	"終了しました。"
@@ -131,21 +131,21 @@ Before (Japanese translation)
 "Ready."	"準備完了。"...
 ```
 
-After (French translation)
+**After (French translation)**
 ```
 "Exit"	"Sortie"
 "Finished."	"Terminé."
-"Origin:"	"origine:"
+"Origin:"	"Origine:"
 "Ready."	"Prêt."
 ...
 ```
 
-Save the modification. Run the following command.
+Save the modification. Run a following command.
 
 ```
 $ python setup.py
 ```
-Above command will convert the original English to your languages.
+The command will convert original English words to your language.
 
 After running the command, move to upper directory and build fab modules as usual.
 
