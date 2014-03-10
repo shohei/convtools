@@ -139,14 +139,17 @@ Open dictionary.txt with a text editor. Now we modify it. I show you an example 
 
 **Before (Japanese translation)**
 ```
+...
 "Exit"	"終了"
 "Finished."	"終了しました。"
 "Origin:"	"原点:"
-"Ready."	"準備完了。"...
+"Ready."	"準備完了。"
+...
 ```
 
 **After (French translation)**
 ```
+...
 "Exit"	"Sortie"
 "Finished."	"Terminé."
 "Origin:"	"Origine:"
@@ -154,7 +157,7 @@ Open dictionary.txt with a text editor. Now we modify it. I show you an example 
 ...
 ```
 
-After changing all words, save the file. Then run a following command.
+After changing all the words, save the file. Then run a following command.
 
 ```
 $ python setup.py
