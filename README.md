@@ -5,7 +5,7 @@ This program converts fab modules (English) into your languages.
 
 Fab modules: http://kokompe.cba.mit.edu/
 
-See a detail describe at the bottom.
+See the detail described at the bottom.
 
 ## 概要
 Fab Modulesを日本語に翻訳するためのスクリプトです。
