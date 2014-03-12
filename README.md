@@ -9,6 +9,7 @@ See the detail described at the bottom.
 
 ## 概要
 Fab Modulesを日本語に翻訳するためのスクリプトです。
+![Fab modules japanese](tools/photo.png)
 
 
 ## 実行環境
