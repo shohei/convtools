@@ -219,7 +219,8 @@ frame.processes.Append("MTM Snap")	frame.processes.Append("MTM Snap")
 frame.processes.Append("Omax waterjet (.ord)")	frame.processes.Append("Omax ウォータージェット (.ord)")
 frame.processes.Append("PostScript halftone (.eps)")	frame.processes.Append("PostScript ハーフトーン (.eps)")
 frame.processes.Append("Resonetics excimer (.oms)")	frame.processes.Append("Resonetics エキシマレーザー (.oms)")
-frame.processes.Append("Roland Modela (.rml)")	frame.processes.Append("Roland モデラ (.rml)")
+frame.processes.Append("Roland MDX-20 mill (.rml)")	frame.processes.Append("Roland MDX-20 切削 (.rml)")
+frame.processes.Append("Roland SRM-20 mill (.rml)")	frame.processes.Append("Roland SRM-20 切削 (.rml)")
 frame.processes.Append("Roland vinylcutter (.camm)")	frame.processes.Append("Roland ビニールカッター (.camm)")
 frame.processes.Append("ShopBot (.sbp)")	frame.processes.Append("ShopBot (.sbp)")
 frame.processes.Append("Universal halftone (.uni)")	frame.processes.Append("Universal ハーフトーン (.uni)")
@@ -255,6 +256,7 @@ self.control_panel.defaults.Append('wax finish cut (1/8)')	self.control_panel.de
 self.control_panel.defaults.Append('wax rough cut (1/8)')	self.control_panel.defaults.Append('ワックス 荒削り 切断 (1/8)')
 self.control_panel.defaults.Append('wax')	self.control_panel.defaults.Append('ワックス')
 settingsMenu.Append(-1, 'Render\tCtrl+Enter',	settingsMenu.Append(-1, 'Render\tCtrl+Enter',
+workflows["volume (.gif) : mesh (.stl)"] = "make_gif_stl"	workflows[u"ボリューム (.gif) : メッシュ (.stl)"] = "make_gif_stl"
 workflows["drawing (.svg) : Epilog lasercutter (.epi)"] = "make_svg_epi"	workflows["描画 (.svg) : Epilog レーザーカッター (.epi)"] = "make_svg_epi"
 workflows["drawing (.svg) : G-codes (.g)"] = "make_svg_g"	workflows[u"描画 (.svg) : Gコード (.g)"] = "make_svg_g"
 workflows["drawing (.svg) : MTM Snap"] = "make_svg_snap"	workflows[u"描画 (.svg) : MTM Snap"] = "make_svg_snap"
@@ -312,3 +314,14 @@ workflows["program (.cad) : ShopBot (.sbp)"] = "make_cad_sbp"	workflows[u"プロ
 workflows["program (.cad) : Universal lasercutter (.uni)"] = "make_cad_uni"	workflows[u"プログラム (.cad) : Universal レーザーカッター (.uni)"] = "make_cad_uni"
 workflows["program (.cad) : image (.png)"] = "make_cad_png"	workflows[u"プログラム (.cad) : 画像 (.png)"] = "make_cad_png"
 workflows["program (.cad) : mesh (.stl)"] = "make_cad_stl"	workflows[u"プログラム (.cad) : メッシュ (.stl)"] = "make_cad_stl"
+workflows["image (.png) : Roland MDX-20 mill (.rml)"] = "make_png_rml"	workflows[u"画像 (.png) : Roland MDX-20 切削 (.rml)"] = "make_png_rml"
+workflows["program (.cad) : Roland MDX-20 mill (.rml)"] = "make_cad_rml	workflows[u"プログラム(.cad) : Roland MDX-20 切削 (.rml)"] = "make_cad_rml
+workflows["mesh (.stl) : Roland MDX-20 mill (.rml)"] = "make_stl_rml"	workflows[u"メッシュ (.stl) : Roland MDX-20 切削 (.rml)"] = "make_stl_rml"
+workflows["drawing (.svg) : Roland MDX-20 mill (.rml)"] = "make_svg_rml"	workflows[u"描画 (.svg) : Roland MDX-20 切削 (.rml)"] = "make_svg_rml"    
+workflows["image (.png) : Roland MDX-20 mill (.rml)"] = "make_png_rml"	workflows[u"画像 (.png) : Roland MDX-20 切削 (.rml)"] = "make_png_rml"
+workflows["expression (.math) : Roland MDX-20 mill (.rml)"]	workflows["数式 (.math) : Roland MDX-20 切削 (.rml)"]
+workflows["image (.png) : Roland SRM-20 mill (.rml)"] = "make_png_Roland_SRM_20"	workflows[u"画像 (.png) : Roland SRM-20 切削(.rml)"] = "make_png_Roland_SRM_20"
+format_text = wx.StaticText(frame,label="from input format:")	format_text = wx.StaticText(frame,label=u"入力フォーマット:")
+process_text = wx.StaticText(frame,label="to output process:")	process_text = wx.StaticText(frame,label=u"出力プロセス:")
+program_text = wx.StaticText(frame,label="with workflow:")	program_text = wx.StaticText(frame,label=u"ワークフロー:")
+frame.processes = wx.ComboBox(frame,value='process',style=wx.CB_READONLY))	frame.processes = wx.ComboBox(frame,value='process',style=wx.CB_READONLY,size=(300, -1))
