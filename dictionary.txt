@@ -320,8 +320,8 @@ workflows["mesh (.stl) : Roland MDX-20 mill (.rml)"] = "make_stl_rml"	workflows[
 workflows["drawing (.svg) : Roland MDX-20 mill (.rml)"] = "make_svg_rml"	workflows[u"描画 (.svg) : Roland MDX-20 切削 (.rml)"] = "make_svg_rml"    
 workflows["image (.png) : Roland MDX-20 mill (.rml)"] = "make_png_rml"	workflows[u"画像 (.png) : Roland MDX-20 切削 (.rml)"] = "make_png_rml"
 workflows["expression (.math) : Roland MDX-20 mill (.rml)"]	workflows["数式 (.math) : Roland MDX-20 切削 (.rml)"]
-workflows["image (.png) : Roland SRM-20 mill (.rml)"] = "make_png_Roland_SRM_20"	workflows[u"画像 (.png) : Roland SRM-20 切削(.rml)"] = "make_png_Roland_SRM_20"
+workflows["image (.png) : Roland SRM-20 mill (.rml)"] = "make_png_Roland_SRM_20"	workflows[u"画像 (.png) : Roland SRM-20 切削 (.rml)"] = "make_png_Roland_SRM_20"
 format_text = wx.StaticText(frame,label="from input format:")	format_text = wx.StaticText(frame,label=u"入力フォーマット:")
 process_text = wx.StaticText(frame,label="to output process:")	process_text = wx.StaticText(frame,label=u"出力プロセス:")
 program_text = wx.StaticText(frame,label="with workflow:")	program_text = wx.StaticText(frame,label=u"ワークフロー:")
-frame.processes = wx.ComboBox(frame,value='process',style=wx.CB_READONLY))	frame.processes = wx.ComboBox(frame,value='process',style=wx.CB_READONLY,size=(300, -1))
+wx.ComboBox(frame,value='process',style=wx.CB_READONLY)	wx.ComboBox(frame,value='process',style=wx.CB_READONLY,size=(300, -1))
